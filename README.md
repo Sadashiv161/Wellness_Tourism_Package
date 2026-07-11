@@ -1,1 +1,0 @@
-# Wellness_Tourism_Package
