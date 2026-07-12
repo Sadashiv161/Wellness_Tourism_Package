@@ -3,7 +3,7 @@ import pandas as pd
 import sklearn
 import os
 
-from google.colab import userdata
+
 from huggingface_hub import HfApi
 
 
