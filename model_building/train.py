@@ -18,21 +18,16 @@ from huggingface_hub.utils import RepositoryNotFoundError, HfHubHTTPError
 import mlflow
 
 from huggingface_hub import hf_hub_download
-from google.colab import userdata
 
-HF_TOKEN = userdata.get("HF_TOKEN")
+
+HF_TOKEN = os.getenv("HF_TOKEN")
 
 repo_id = "sadashivbhatt/Wellness_Tourism_Package"
 
 mlflow.set_tracking_uri("http://localhost:5000")
 mlflow.set_experiment("MLOps_experiment")
 
-api = HfApi()
-
-token =os.getenv("HF_TOKEN")
-
-
-api = HfApi(token=os.getenv("HF_TOKEN"))
+api = HfApi(token=HF_TOKEN)
 
 Xtrain = pd.read_csv(
     hf_hub_download(
@@ -82,7 +77,7 @@ categorical_features = [
     "PreferredPropertyStar",     # 3, 4, 5 stars are categories
     "MaritalStatus",
     "Passport",                  # 0/1 (binary category)
-    "PitchSatisfactionScore",    # Rating (1–5)
+    "PitchSatisfactionScore",    # Rating (1-5)
     "OwnCar",                    # 0/1 (binary category)
     "Designation"
 ]
