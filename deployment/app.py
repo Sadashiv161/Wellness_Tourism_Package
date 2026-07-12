@@ -188,11 +188,11 @@ if st.button("Predict"):
     if prediction == 1:
 
         st.success(
-            "Customer is likely to purchase the Wellness Tourism Package.}"
+            "Customer is likely to purchase the Wellness Tourism Package."
         )
 
     else:
 
         st.error(
-            "Customer is unlikely  to purchase the Wellness Tourism Package.}"
+            "Customer is unlikely  to purchase the Wellness Tourism Package."
         )
